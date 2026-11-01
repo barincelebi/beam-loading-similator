@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1731">
+<title>BeamLab | Kiriş Yükleme Senaryoları</title>
+<style>
+:root{--bg:#081225;--panel:#111f36;--panel2:#142640;--border:#273b59;--text:#e9f1fc;--muted:#99adc9;--accent:#5fbcff;--teal:#3fe0bc;--orange:#ffc078;--red:#f5a3b4;--shadow:0 18px 50px rgba(0,0,0,.16)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:radial-gradient(ellipse at 13% -10%,#19355d 0%,transparent 37%),var(--bg);font-size:14px;line-height:1.55}main{max-width:1260px;padding:34px 22px 70px;margin:auto}h1{font-size:clamp(27px,3.7vw,43px);line-height:1.16;letter-spacing:-.035em;margin:8px 0 12px}h2{font-size:18px;margin:0;letter-spacing:-.015em}h3{font-size:14px;margin:0 0 14px}p{margin:0}.eyebrow{color:var(--teal);font-weight:750;text-transform:uppercase;letter-spacing:.14em;font-size:11px}.sub{color:var(--muted);max-width:720px;font-size:15px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:24px}.pill{font-size:12px;color:#b2ccec;border:1px solid #395775;padding:6px 12px;border-radius:30px;white-space:nowrap}.layout{display:grid;grid-template-columns:330px minmax(0,1fr);gap:18px;align-items:start}.panel{background:linear-gradient(145deg,rgba(23,42,68,.94),rgba(15,29,50,.97));border:1px solid var(--border);border-radius:17px;box-shadow:var(--shadow)}.sidebar{padding:22px;position:sticky;top:16px}.caption{color:var(--muted);font-size:12px}.group{margin-top:22px}.group-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:9px}.field-label{font-size:12px;color:#c4d3e8;font-weight:650}.val{font-weight:750;font-variant-numeric:tabular-nums;color:#eaf5ff;font-size:13px}.select{width:100%;background:#09182d;color:#eaf3ff;border:1px solid #3b597b;border-radius:9px;padding:11px 10px;font:inherit;outline:none}.select:focus,input:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}input[type=range]{width:100%;accent-color:#5fbcff;cursor:pointer}.range-row{margin-top:16px}.range-minmax{display:flex;justify-content:space-between;color:#7289a9;font-size:10px;margin-top:-2px}.helper{margin-top:12px;padding:11px 12px;background:#0b1b30;border:1px solid #233e5b;border-radius:11px;color:#a8bdd7;font-size:12px}.check{display:flex;gap:9px;align-items:flex-start;cursor:pointer;color:#d7e4f6;font-size:13px}.check input{accent-color:#5fbcff;margin-top:4px}.content{display:grid;gap:18px}.chart-panel,.diagram-panel{padding:21px}.chart-title{display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:9px}.chart-header-note{color:var(--muted);font-size:12px;margin-top:5px}.chart-wrap{position:relative;margin-top:14px;height:365px;overflow:hidden}.chart-wrap canvas{display:block;width:100%;height:100%}.tooltip{pointer-events:none;position:absolute;top:0;left:0;display:none;color:#edf6ff;font-size:12px;line-height:1.55;background:#08182cef;border:1px solid #3d5d80;border-radius:8px;padding:7px 10px;box-shadow:0 8px 22px #0006;white-space:nowrap}.legend{display:flex;flex-wrap:wrap;gap:13px;font-size:12px;margin-top:3px;color:#cbdaf0}.legend-item{display:flex;align-items:center;gap:7px}.swatch{width:20px;height:3px;border-radius:2px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.stat{background:#0c1b30;border:1px solid #263e5a;border-radius:11px;padding:12px 13px}.stat span{display:block;font-size:11px;color:#8ea6c3}.stat strong{display:block;margin-top:4px;font-size:19px;font-variant-numeric:tabular-nums;line-height:1.2}.diagram-box{margin-top:14px;background:#0c1b30;border:1px solid #233b56;border-radius:13px;overflow:hidden;padding:10px}.beam-svg{display:block;width:100%;height:170px}.math{margin-top:15px;color:#ccdbeb;font-size:13px}.math code{color:#83d1fc;font-size:13px;background:#09192d;border:1px solid #29435f;border-radius:6px;padding:3px 6px;display:inline-block;margin-top:6px}.notes{color:#91a8c3;font-size:12px;margin-top:8px}.btn-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.btn{background:#173b60;border:1px solid #38648c;border-radius:9px;padding:10px 12px;color:#dcefff;font-size:12px;font-weight:700;cursor:pointer}.btn:hover{background:#1c507e}.btn.primary{background:#286fa3;border-color:#4398cf;color:#fff}.footer{font-size:12px;color:#8298b5;margin-top:21px}.hidden{display:none!important}@media(max-width:880px){.layout{grid-template-columns:1fr}.sidebar{position:static}.stats{grid-template-columns:repeat(3,1fr)}}@media(max-width:550px){main{padding:24px 12px 45px}.top{display:block}.pill{display:inline-block;margin-top:13px}.panel{border-radius:12px}.sidebar,.chart-panel,.diagram-panel{padding:16px}.chart-wrap{height:310px}.stats{gap:6px}.stat{padding:9px}.stat strong{font-size:15px}}
+</style>
+</head>
+<body><main>
+<header class="top"><div><div class="eyebrow">Mechanical Engineering · Interactive Simulator</div><h1>Beam Loading <span style="color:#6fc8ff">Scenario Lab</span></h1><p class="sub">Üç yükleme durumunu seç, boyutları ve kuvveti değiştir, kiriş uzunluğu boyunca maksimum normal gerilmenin nasıl değiştiğini anında gör.</p></div><div class="pill">Ücretsiz · Tarayıcıda çalışır</div></header>
+<div class="layout">
+<aside class="panel sidebar"><h2>Simülasyon kontrolleri</h2><p class="caption">Değişiklikler grafiğe anında uygulanır.</p>
+<div class="group"><div class="group-head"><label class="field-label" for="scenario">Yükleme senaryosu</label></div><select id="scenario" class="select"><option value="axial">01 — Axial Loading</option><option value="transverse" selected>02 — Transverse Loading</option><option value="tapered">03 — Transverse Loading (Tapered)</option></select></div>
+<div class="group"><label class="check"><input type="checkbox" id="compare"><span>Üç senaryoyu aynı grafikte karşılaştır</span></label><p class="caption" style="margin-top:6px">Karşılaştırma açıkken tüm eğriler aynı eksen ve ölçeği kullanır.</p></div>
+<div class="group"><h3>Parametreler</h3>
+<div class="range-row"><div class="group-head"><label for="force" class="field-label">Uygulanan kuvvet F</label><output class="val" id="forceValue"></output></div><input type="range" id="force" min="100" max="5000" step="100" value="1000"><div class="range-minmax"><span>100 N</span><span>5000 N</span></div></div>
+<div class="range-row"><div class="group-head"><label for="length" class="field-label">Kiriş uzunluğu L</label><output class="val" id="lengthValue"></output></div><input type="range" id="length" min="200" max="2000" step="50" value="1000"><div class="range-minmax"><span>200 mm</span><span>2000 mm</span></div></div>
+<div class="range-row"><div class="group-head"><label for="width" class="field-label">Kesit genişliği b</label><output class="val" id="widthValue"></output></div><input type="range" id="width" min="10" max="100" step="5" value="25"><div class="range-minmax"><span>10 mm</span><span>100 mm</span></div></div>
+<div class="range-row"><div class="group-head"><label for="height" class="field-label">Ankastre uç yüksekliği h₀</label><output class="val" id="heightValue"></output></div><input type="range" id="height" min="20" max="150" step="5" value="60"><div class="range-minmax"><span>20 mm</span><span>150 mm</span></div></div>
+<div class="range-row" id="tip-row"><div class="group-head"><label for="tip" class="field-label">Serbest uç yüksekliği hₜ</label><output class="val" id="tipValue"></output></div><input type="range" id="tip" min="5" max="55" step="1" value="36"><div class="range-minmax"><span>5 mm</span><span id="tipMaxText">55 mm</span></div></div>
+<div class="helper">Birimler: kuvvet <b>N</b>, tüm uzunluklar <b>mm</b>, gerilme <b>MPa (N/mm²)</b>. Kesit dikdörtgendir. Eğilme gerilmesi kesitin en dış lifinde hesaplanır.</div></div>
+<div class="btn-row"><button id="reset" class="btn" type="button">↺ Varsayılan değerlere dön</button><button id="csv" class="btn primary" type="button">↓ CSV indir</button></div></aside>
+<section class="content">
+<div class="panel chart-panel"><div class="chart-title"><div><div class="eyebrow">LIVE RESULT</div><h2>Gerilme – uzunluk grafiği</h2><p class="chart-header-note">Yatay eksen: x [mm] · Düşey eksen: |σ(x)| [MPa]</p></div><div id="modeLabel" class="pill">Transverse Loading</div></div><div class="chart-wrap" id="chartWrap"><canvas id="chart" role="img" aria-label="Kiriş boyunca gerilme grafiği"></canvas><div id="tooltip" class="tooltip"></div></div><div class="legend" id="legend"></div><div class="stats"><div class="stat"><span id="stat1-label">Maksimum gerilme</span><strong id="stat1">—</strong></div><div class="stat"><span>En yüksek noktanın konumu</span><strong id="stat2">—</strong></div><div class="stat"><span>Ankastre kesit gerilmesi</span><strong id="stat3">—</strong></div></div></div>
+<div class="panel diagram-panel"><div class="eyebrow">SCHEMATIC & EQUATION</div><h2 id="diagramHeading">Transverse Loading</h2><div class="diagram-box"><svg class="beam-svg" id="beamSVG" viewBox="0 0 700 180" role="img" aria-label="Seçilen yükleme senaryosunun kiriş şeması"></svg></div><div class="math" id="equation"></div><p class="notes" id="description"></p></div>
+</section></div>
+<p class="footer">Model: statik, doğrusal elastik, küçük şekil değiştirmeli kiriş yaklaşımı. Gerilme büyüklüğü çizilir; basma ve çekme işareti gösterilmez. Eğitim ve ilk tasarım karşılaştırması içindir, nihai yapısal doğrulama yerine geçmez.</p>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const ids=['force','length','width','height','tip'];
+const colors={axial:'#3fe0bc',transverse:'#5fbcff',tapered:'#ffc078'};
+const names={axial:'Axial Loading',transverse:'Transverse Loading',tapered:'Transverse Loading (Tapered Beam)'};
+const presets={force:1000,length:1000,width:25,height:60,tip:36};
+const trNumber=(value,decimals=2)=>Number(value).toLocaleString('tr-TR',{minimumFractionDigits:decimals,maximumFractionDigits:decimals});
+function params(){return Object.fromEntries(ids.map(k=>[k,Number($(k).value)]));}
+function stress(which,x,p){const {force:F,length:L,width:b,height:h0,tip:ht}=p;
+ if(which==='axial')return F/(b*h0);
+ let h=which==='tapered'?h0+(ht-h0)*x/L:h0;
+ return 6*F*Math.max(0,L-x)/(b*h*h);
+}
+function samples(which,p){return Array.from({length:301},(_,i)=>{const x=p.length*i/300;return{x,y:stress(which,x,p)}})}
+function series(p){return $('compare').checked?['axial','transverse','tapered']:[$('scenario').value]}
+function renderSvg(which,p){const {height:h0,tip:ht}=p;let topL=65,bottomL=119,cy=92;
+ let hrt=which==='tapered'?(54*(ht/h0)):54;let topR=cy-hrt/2,bottomR=cy+hrt/2;
+ const defs=`<defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#527190" stroke-width="2"/></pattern><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#55c2ff"/></marker><marker id="dim" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0 L7 3.5 L0 7 z" fill="#849dbb"/></marker></defs>`;
+ let beam=`<polygon points="115,${topL} 560,${topR} 560,${bottomR} 115,${bottomL}" fill="#264765" stroke="#91b3d5" stroke-width="2"/>`;
+ let support=`<rect x="93" y="45" width="21" height="95" fill="url(#hatch)"/><line x1="114" y1="41" x2="114" y2="143" stroke="#bbd0e8" stroke-width="4"/>`;
+ let force=which==='axial'?`<line x1="560" y1="92" x2="645" y2="92" stroke="#55c2ff" stroke-width="4" marker-end="url(#arr)"/><text x="624" y="73" fill="#9bdbff" font-size="18" font-weight="700">F</text>`:`<line x1="560" y1="26" x2="560" y2="${topR-7}" stroke="#55c2ff" stroke-width="4" marker-end="url(#arr)"/><text x="573" y="35" fill="#9bdbff" font-size="18" font-weight="700">F</text>`;
+ let dims=`<line x1="115" y1="151" x2="560" y2="151" stroke="#849dbb" stroke-width="1.5" marker-start="url(#dim)" marker-end="url(#dim)"/><text x="336" y="172" fill="#c5d9ef" font-size="16" text-anchor="middle">L = ${p.length} mm</text>`;
+ let label=which==='tapered'?`h₀ = ${h0} mm     hₜ = ${ht} mm`:`h = ${h0} mm`;
+ return defs+support+beam+force+dims+`<text x="335" y="83" fill="#d9ecfb" font-size="15" text-anchor="middle">b = ${p.width} mm</text><text x="335" y="105" fill="#d9ecfb" font-size="14" text-anchor="middle">${label}</text><text x="110" y="28" fill="#8ea9c5" font-size="13">x = 0</text><text x="535" y="28" fill="#8ea9c5" font-size="13">x = L</text>`;
+}
+const canvas=$('chart'),wrap=$('chartWrap'),tip=$('tooltip');let chartInfo=null;
+function drawChart(p,active){const rect=wrap.getBoundingClientRect(),w=Math.max(rect.width,280),h=Math.max(rect.height,250);const dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);canvas.style.width=w+'px';canvas.style.height=h+'px';const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
+ let left=w<500?53:70,right=20,top=20,bottom=46,plotW=w-left-right,plotH=h-top-bottom;
+ const lines=active.map(k=>({key:k,points:samples(k,p)}));let maxY=Math.max(...lines.flatMap(line=>line.points.map(t=>t.y)));maxY=Math.max(maxY*1.13,.05);
+ const X=x=>left+x/p.length*plotW,Y=y=>top+plotH-y/maxY*plotH;
+ ctx.strokeStyle='#2b415f';ctx.lineWidth=1;ctx.font='12px system-ui';ctx.textAlign='right';ctx.textBaseline='middle';
+ for(let i=0;i<=4;i++){const yy=top+plotH*i/4;ctx.setLineDash(i===4?[]:[3,6]);ctx.beginPath();ctx.moveTo(left,yy);ctx.lineTo(w-right,yy);ctx.stroke();ctx.fillStyle='#a5b8d2';ctx.fillText(trNumber(maxY*(4-i)/4,maxY<1?3:1),left-9,yy)}ctx.setLineDash([]);
+ ctx.textAlign='center';ctx.textBaseline='top';for(let i=0;i<=4;i++){ctx.fillStyle='#a5b8d2';ctx.fillText(trNumber(p.length*i/4,0),left+plotW*i/4,top+plotH+12)}
+ ctx.fillStyle='#bdcfe5';ctx.font='12px system-ui';ctx.textAlign='left';ctx.fillText('σ [MPa]',left+5,top-16);ctx.textAlign='right';ctx.fillText('x [mm]',w-right,top+plotH+32);
+ for(const line of lines){ctx.strokeStyle=colors[line.key];ctx.lineWidth=3;ctx.lineJoin='round';ctx.beginPath();line.points.forEach((a,i)=>{if(i===0)ctx.moveTo(X(a.x),Y(a.y));else ctx.lineTo(X(a.x),Y(a.y))});ctx.stroke();if(lines.length===1){ctx.lineTo(X(p.length),Y(0));ctx.lineTo(X(0),Y(0));ctx.closePath();ctx.fillStyle=colors[line.key]+'18';ctx.fill()}}
+ chartInfo={left,right,top,bottom,plotW,plotH,w,h,maxY,p,active,X,Y};
+}
+function render(){const p=params(),which=$('scenario').value,active=series(p);$('tip-row').classList.toggle('hidden',which!=='tapered'&&!$('compare').checked);
+ for(const id of ids){$(id+'Value').textContent=trNumber(p[id],0)+(id==='force'?' N':' mm')}
+ $('modeLabel').textContent=$('compare').checked?'3 senaryo · tek grafik':names[which];
+ $('legend').innerHTML=active.map(k=>`<span class="legend-item"><span class="swatch" style="background:${colors[k]}"></span>${names[k]}</span>`).join('');
+ $('diagramHeading').textContent=names[which];$('beamSVG').innerHTML=renderSvg(which,p);
+ let eq,desc;
+ if(which==='axial'){eq='σ(x) = F / A = F / (b · h₀)';desc='Sabit kesitli çubukta merkezî eksenel çekme kuvveti uygulanır. Kesit alanı sabit olduğu için gerilme x boyunca sabittir.'}
+ if(which==='transverse'){eq='|σ(x)| = M(x)c / I = 6F(L − x) / (b · h₀²)';desc='Sabit dikdörtgen kesitli ankastre kirişin ucunda düşey noktasal kuvvet vardır. M(x) = F(L − x); en dış lifteki eğilme gerilmesi ankastreden uca doğrusal azalır.'}
+ if(which==='tapered'){eq='h(x) = h₀ + (hₜ − h₀)x/L   →   |σ(x)| = 6F(L − x) / [b · h(x)²]';desc='Kalınlığı (genişliği b) sabit, yüksekliği doğrusal daralan dikdörtgen kesitli ankastre kiriş varsayılır. Kesitin ikinci alan momenti I(x) = b·h(x)³/12 olduğundan gerilme genellikle doğrusal olmayan bir eğri izler. hₜ sıfırdan büyük tutulur.'}
+ $('equation').innerHTML='Kullanılan denklem:<br><code>'+eq+'</code>';$('description').textContent=desc;
+ const single=samples(which,p),max=single.reduce((a,b)=>b.y>a.y?b:a,single[0]);$('stat1').textContent=trNumber(max.y)+' MPa';$('stat2').textContent=trNumber(max.x,0)+' mm';$('stat3').textContent=trNumber(stress(which,0,p))+' MPa';
+ drawChart(p,active)
+}
+function syncTip(){const h=Number($('height').value);const t=$('tip');t.max=String(h-1);$('tipMaxText').textContent=(h-1)+' mm';if(Number(t.value)>=h)t.value=h-1}
+ids.forEach(id=>$(id).addEventListener('input',()=>{if(id==='height')syncTip();render()}));$('scenario').addEventListener('change',render);$('compare').addEventListener('change',render);
+$('reset').addEventListener('click',()=>{for(const k of ids)$(k).value=presets[k];$('scenario').value='transverse';$('compare').checked=false;syncTip();render()});
+$('csv').addEventListener('click',()=>{const p=params(),keys=series(p),lines=['x_mm,'+keys.map(k=>k+'_MPa').join(',')];for(let i=0;i<=300;i++){let x=p.length*i/300;lines.push([x.toFixed(3),...keys.map(k=>stress(k,x,p).toFixed(6))].join(','))}const blob=new Blob(['\ufeff'+lines.join('\n')],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='beam-stress-scenarios.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),500)});
+canvas.addEventListener('mousemove',e=>{if(!chartInfo)return;const i=chartInfo,rect=canvas.getBoundingClientRect(),cx=e.clientX-rect.left,cy=e.clientY-rect.top;if(cx<i.left||cx>i.w-i.right||cy<i.top||cy>i.h-i.bottom){tip.style.display='none';return}const x=(cx-i.left)/i.plotW*i.p.length;tip.innerHTML='<b>x = '+trNumber(x,1)+' mm</b><br>'+i.active.map(k=>'<span style="color:'+colors[k]+'">●</span> '+names[k]+': '+trNumber(stress(k,x,i.p))+' MPa').join('<br>');tip.style.display='block';let lx=cx+13,ly=cy-12;const tw=tip.offsetWidth,th=tip.offsetHeight;if(lx+tw>i.w-4)lx=cx-tw-13;if(ly+th>i.h)ly=i.h-th-4;tip.style.left=Math.max(2,lx)+'px';tip.style.top=Math.max(2,ly)+'px'});canvas.addEventListener('mouseleave',()=>tip.style.display='none');
+window.addEventListener('resize',()=>{render()});syncTip();render();
+</script>
+</body></html>
